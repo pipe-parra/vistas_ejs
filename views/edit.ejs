@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>CRUD</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/login">Examen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Productos</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link disabled">Compras</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Salir</a>
+            </li></ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+      <% if (user) { %>
+      <div class="container mt-4">          
+          <div class="card border-secondary">  
+                <div class="card-header">Editar Registro</div>
+                <div class="card-body">
+                    <form action="/update" method="POST">
+                         <input id="id_u" name="id_u" value="<%= user.id_u %>" hidden>
+                        
+                        <div>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" tabindex="1" value="<%= user.nombre  %>">
+                        </div>   
+                        <div class="mb-3">
+                        <label for="usuario" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" tabindex="2" value="<%= user.usuario  %>">
+                        </div>  
+                        <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="password" name="password" tabindex="3" value="<%= user.password  %>">
+                        </div> 
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="text" class="form-control" id="email" name="email" tabindex="4" value="<%= user.email  %>">
+                        </div> 
+                        
+                        <div class="mb-3">
+                        <label for="staff" class="form-label">Staff</label>
+                        <select id="staff" name="staff" class="form-select" aria-label="Default select example" tabindex="5" value="<%= user.staff  %>">
+                          <option <%= user.staff=='soy staff' ? "selected" : '' %> value="soy staff">Soy Staff</option>
+                            <option <%= user.staff=='no soy staff' ? "selected" : '' %> value="no soy staff">No soy Staff</option>                            
+                          </select>  
+                        </div>      
+
+
+
+                                                                              
+                        <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                        <a href="/" class="btn btn-secondary">Cancelar</a>
+                    </form>      
+                </div>
+            </div>     
+      </div>
+      <% } %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

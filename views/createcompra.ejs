@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>CRUD</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/login">Examen</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Tienda">Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/productos">Productos</a>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link" href="/compra">Compras</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Salir</a>
+                </li></ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+      <div class="container mt-4">     
+            <div class="card border-secondary">  
+                <div class="card-header">Nuevo Registro de compra</div>
+                <div class="card-body">
+                    <form action="/savecompra" method="POST">
+                         <div class="mb-3">
+                        <label for="nombrec" class="form-label">Nombre de la compra</label>
+                        <input type="text" class="form-control" id="nombrec" name="nombrec" tabindex="1">
+                        </div>   
+                        <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" tabindex="2">
+                        </div>  
+                        <div class="mb-3">
+                          <label for="cantprod" class="form-label">Cantidad de Productos</label>
+                          <input type="number" class="form-control" id="cantprod" name="cantprod" tabindex="3">
+                        </div> 
+      
+                                                      
+                        <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button>
+                        <a href="/compra" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>        
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </div>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>CRUD</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/login">Examen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/tienda">Tienda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Productos</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link disabled">Compras</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Salir</a>
+            </li></ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+      <% if (tienda) { %>
+      <div class="container mt-4">          
+          <div class="card border-secondary">  
+                <div class="card-header">Editar Tienda</div>
+                <div class="card-body">
+                    <form action="/updatetienda" method="POST">
+                         <input id="id_t" name="id_t" value="<%= tienda.id_t %>" hidden>
+                        
+                        <div>
+                        <label for="nombret" class="form-label">Nombre Tienda</label>
+                        <input type="text" class="form-control" id="nombret" name="nombret" tabindex="1" value="<%= tienda.nombret  %>">
+                        </div>   
+                        <div class="mb-3">
+                        <label for="sucursal" class="form-label">Sucursal</label>
+                        <input type="text" class="form-control" id="sucursal" name="sucursal" tabindex="2" value="<%= tienda.sucursal  %>">
+                        </div>  
+                        <div class="mb-3">
+                          <label for="direccion" class="form-label">Direccion</label>
+                          <input type="text" class="form-control" id="direccion" name="direccion" tabindex="3" value="<%= tienda.direccion  %>">
+                        </div> 
+                        <div class="mb-3">
+                          <label for="ciudad" class="form-label">Ciudad</label>
+                          <input type="text" class="form-control" id="ciudad" name="ciudad" tabindex="4" value="<%= tienda.ciudad  %>">
+                        </div> 
+                        <div class="mb-3">
+                            <label for="region" class="form-label">Region</label>
+                            <input type="text" class="form-control" id="region" name="region" tabindex="5" value="<%= tienda.ciudad  %>">
+                        </div> 
+                                                                                                       
+                        <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button>
+                        <a href="/tienda" class="btn btn-secondary">Cancelar</a>
+                    </form>      
+                </div>
+            </div>     
+      </div>
+      <% } %>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
